@@ -1,0 +1,16 @@
+
+<h2>My Pumps</h2>
+<agm-map [latitude]="centerLat" [longitude]="centerLon" [zoom]="zoom">
+  <agm-marker
+    *ngFor="let marker of markers"
+    [latitude]="marker.lat"
+    [longitude]="marker.lon"
+    [iconUrl]="iconUrl"
+  >
+    <agm-info-window [isOpen]="true" [disableAutoPan]="true">
+      <h6>{{marker.locationName}}</h6>
+      <h6>{{marker.pumpReference}}</h6>
+    </agm-info-window>
+  </agm-marker>
+</agm-map>
+
